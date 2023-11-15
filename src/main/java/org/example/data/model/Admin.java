@@ -12,6 +12,7 @@ public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(unique = true)
     private String email;
     private String password;
     private String firstName;
@@ -19,5 +20,5 @@ public class Admin {
     @OneToMany
     private Set<Address> address;
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private Set<Role> role;
 }
